@@ -24,6 +24,14 @@ public class Reserve {
     @Column(name = "status")
     private String status;
 
+    @Override
+    public String toString() {
+        return(
+            "Reserve{" + "id=" + id + ", id_user=" + id_user + ", id_destiny=" + id_destiny +
+            ", reserve_date=" + reserve_date + ", status='" + status + '\'' + '}'
+        );
+    }
+
     public int getId() {
         return id;
     }

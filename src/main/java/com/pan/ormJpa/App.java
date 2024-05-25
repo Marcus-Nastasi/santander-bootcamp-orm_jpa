@@ -1,5 +1,6 @@
 package com.pan.ormJpa;
 
+import com.pan.ormJpa.Repository.ReserveRepository;
 import com.pan.ormJpa.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -11,9 +12,16 @@ public class App implements CommandLineRunner {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private ReserveRepository reserveRepository;
+
     @Override
     public void run(String... args) throws Exception {
+        System.out.println("\n");
         userRepository.findAll().forEach(System.out::println);
+        System.out.println("\n");
+        reserveRepository.findAll().forEach(System.out::println);
+        System.out.println("\n");
     }
 }
 
