@@ -13,7 +13,7 @@ public class App implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-
+        userRepository.findAll().forEach(System.out::println);
     }
 }
 
