@@ -7,9 +7,13 @@ import com.pan.ormJpa.Repository.DestinyRepository;
 import com.pan.ormJpa.Repository.ReserveRepository;
 import com.pan.ormJpa.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -50,6 +54,28 @@ public class App implements CommandLineRunner {
         });
 
         System.out.println(destinyRepository.count());
+
+        /*User user = new User();
+        user.setName("Jesus Salamanca");
+        user.setEmail("jesus@hotmail.com");
+        user.setBirth(LocalDate.of(1987, 3, 1));
+        userRepository.save(user);*/
+
+        /*User jesus = userRepository.findById(7).get();
+        jesus.setEmail("jesus02@hotmail.com");
+        userRepository.save(jesus);*/
+
+        /*User jesus = userRepository.findById(7).get();
+        jesus.update("Jesus Salamanca Guerva");
+        userRepository.save(jesus);*/
+
+        /*User jesus = userRepository.findById(7).get();
+        jesus.update("Jesus Salamanca Guerva", "jesus@hotmail.com");
+        userRepository.save(jesus);*/
+
+        System.out.println("\n\n");
+        System.out.println(userRepository.findById(7).get());
+        System.out.println("\n\n");
     }
 }
 

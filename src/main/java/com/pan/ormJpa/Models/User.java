@@ -29,6 +29,21 @@ public class User {
         );
     }
 
+    public void update(String name, String email, LocalDate birth) {
+        this.setName(name);
+        this.setEmail(email);
+        this.setBirth(birth);
+    }
+
+    public void update(String name, String email) {
+        this.setName(name);
+        this.setEmail(email);
+    }
+
+    public void update(String name) {
+        this.setName(name);
+    }
+
     public int getId() {
         return id;
     }
