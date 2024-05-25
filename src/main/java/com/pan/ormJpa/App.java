@@ -38,9 +38,8 @@ public class App implements CommandLineRunner {
         System.out.println(userToReserve);
 
         System.out.println("\n");
-        List<Destiny> destinies = new ArrayList<>();
 
-        destinies.addAll(destinyRepository.findAll());
+        List<Destiny> destinies = new ArrayList<>(destinyRepository.findAll());
         destinies.forEach(System.out::println);
         System.out.println("\n");
 
@@ -49,6 +48,8 @@ public class App implements CommandLineRunner {
                 if (r.getId_destiny() == d.getId()) System.out.println(r + "\n" + d + "\n");
             });
         });
+
+        System.out.println(destinyRepository.count());
     }
 }
 
