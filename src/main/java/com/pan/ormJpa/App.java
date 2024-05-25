@@ -33,7 +33,7 @@ public class App implements CommandLineRunner {
         List<User> users = userRepository.findAll();
         List<Reserve> reserves = reserveRepository.findAll();
 
-        for (User u: users) for (Reserve r: reserves) if (r.getId_user() == u.getId()) userToReserve.put(u.getId(), r.getId());
+        for(User u: users) for(Reserve r: reserves) if(r.getId_user() == u.getId()) userToReserve.put(u.getId(), r.getId());
 
         System.out.println(userToReserve);
 
