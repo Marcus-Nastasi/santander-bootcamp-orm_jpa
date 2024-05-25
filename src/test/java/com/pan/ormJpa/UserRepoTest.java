@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.time.LocalDate;
+
 @SpringBootTest
 public class UserRepoTest {
 
@@ -15,6 +17,8 @@ public class UserRepoTest {
     @Test
     void testingGetUser() {
         Assertions.assertEquals("Marc", userRepository.findById(6).get().getName());
+        Assertions.assertEquals(6, userRepository.findById(6).get().getId());
+        Assertions.assertEquals(LocalDate.of(2001, 10, 26), userRepository.findById(6).get().getBirth());
     }
 }
 
